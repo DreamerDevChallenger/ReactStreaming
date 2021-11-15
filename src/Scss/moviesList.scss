@@ -1,0 +1,23 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: white;
+  li {
+    width: 200px;
+    margin: 0.5em;
+    .picture {
+      border-radius: 0.5em;
+      height: 270px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 270px;
+      }
+    }
+  }
+}
