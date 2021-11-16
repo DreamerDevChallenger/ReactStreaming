@@ -1,25 +1,7 @@
-function Search({ movies, moviesState }) {
-  function search(e) {
-    if (e.key === "Enter") {
-      console.log("work");
-    }
-  }
-  function handleChange(e) {
-    let s = e.target.value;
-    moviesState(function prevState() {
-      return { prevState, s: s };
-    });
-    console.log(movies.s);
-  }
-  return (
-    <section>
-      <input
-        type="text"
-        placeholder="Search..."
-        onChange={handleChange}
-        onKeyPress={search}
-      ></input>
-    </section>
-  );
+function Search({ search, setSearch, movies }) {
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+  };
+  return <div></div>;
 }
 export default Search;
