@@ -1,15 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import Home from "./pages/Home";
+import SearchPage from "./pages/SearchPage";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <Link to="/">Home</Link> | <Link to="/result">Search</Link>
       <Routes>
-        <Route path="/" element={<App></App>}></Route>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/result" element={<SearchPage></SearchPage>}></Route>
       </Routes>
     </Router>
   </React.StrictMode>,

@@ -9,23 +9,14 @@ function MoviesList() {
   useEffect(() => {
     function getMovies() {
       setTimeout(async () => {
-        const response = await axios.get(
-          `http://localhost:3003/api/movies/result/?dsearch=${""}`
-        );
+        const response = await axios.get(`http://localhost:3003/api/movies/`);
         setMoviesState(response.data);
       });
     }
     getMovies();
   }, []);
-
-  console.log();
   return (
     <section>
-      <article>
-        <form action="/result" method="GET">
-          <input type="text" placeholder="Search..." name="dsearch"></input>
-        </form>
-      </article>
       <ul>
         {movies.map((m) => (
           <li key={m._id}>
