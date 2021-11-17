@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "../Css/moviesList.css";
-import Search from "./Search";
+import Pagination from "./Pagination";
 import axios from "axios";
 
 function MoviesList() {
   const [movies, setMoviesState] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [moviesPerPage, setMoviesPerPage] = useState(5);
+
+  const indexOfLastPage = currentPage * moviesPerPage;
+  const indexOfFirstPage = indexOfLastPage - moviesPerPage;
+  const currentMovies = movies.slice(indexOfFirstPage, indexOfLastPage);
 
   useEffect(() => {
     function getMovies() {
@@ -15,10 +21,12 @@ function MoviesList() {
     }
     getMovies();
   }, []);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <section>
       <ul>
-        {movies.map((m) => (
+        {currentMovies.map((m) => (
           <li key={m._id}>
             <div className="picture">
               <img src={m._img} alt={m.title + "picture"} />
@@ -27,6 +35,12 @@ function MoviesList() {
           </li>
         ))}
       </ul>
+      <Pagination
+        moviesPerPage={moviesPerPage}
+        totalMovies={movies.length}
+        paginate={paginate}
+        setMoviesPerPage={setMoviesPerPage}
+      />
     </section>
   );
 }

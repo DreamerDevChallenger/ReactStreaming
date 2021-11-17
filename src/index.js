@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
@@ -10,7 +10,7 @@ import SearchPage from "./pages/SearchPage";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Link to="/">Home</Link> | <Link to="/result">Search</Link>
+      <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/result" element={<SearchPage></SearchPage>}></Route>
