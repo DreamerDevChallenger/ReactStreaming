@@ -1,6 +1,9 @@
 import "../Css/pagination.css";
-import "../../node_modules/font-awesome/css/font-awesome.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleDoubleRight,
+  faAngleDoubleLeft,
+} from "@fortawesome/free-solid-svg-icons";
 function Pagination({ moviesPerPage, totalMovies, paginate }) {
   const pageNumbers = [];
   for (let p = 0; p <= Math.ceil(totalMovies / moviesPerPage); p++) {
@@ -8,19 +11,25 @@ function Pagination({ moviesPerPage, totalMovies, paginate }) {
   }
   pageNumbers.shift();
   return (
-    <article>
+    <article className="block-pagination">
       <ul>
-        <button onClick={() => paginate(1)}>first</button>
+        <a href={"#page:" + 1}>
+          <button onClick={() => paginate(1)}>
+            <FontAwesomeIcon icon={faAngleDoubleLeft} />
+          </button>
+        </a>
         {pageNumbers.map((n) => (
           <li key={n}>
-            <a onClick={() => paginate(n)} href={"#!"}>
-              {n}
+            <a onClick={() => paginate(n)} href={"#page:" + n}>
+              <button>{n}</button>
             </a>
           </li>
         ))}
-        <button onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}>
-          <i className="far fa-thumbs-down"></i>
-        </button>
+        <a href={"#page:" + pageNumbers[pageNumbers.length - 1]}>
+          <button onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}>
+            <FontAwesomeIcon icon={faAngleDoubleRight} />
+          </button>
+        </a>
       </ul>
     </article>
   );

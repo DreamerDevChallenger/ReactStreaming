@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../Css/moviesList.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Pagination from "./Pagination";
 import axios from "axios";
 
 function MoviesList() {
+  Aos.init({ duration: 1000 });
   const [movies, setMoviesState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage, setMoviesPerPage] = useState(5);
@@ -13,11 +16,9 @@ function MoviesList() {
   const currentMovies = movies.slice(indexOfFirstPage, indexOfLastPage);
 
   useEffect(() => {
-    function getMovies() {
-      setTimeout(async () => {
-        const response = await axios.get(`http://localhost:3003/api/movies/`);
-        setMoviesState(response.data);
-      });
+    async function getMovies() {
+      const response = await axios.get(`http://localhost:3003/api/movies/`);
+      setMoviesState(response.data);
     }
     getMovies();
   }, []);
@@ -28,10 +29,19 @@ function MoviesList() {
       <ul>
         {currentMovies.map((m) => (
           <li key={m._id}>
-            <div className="picture">
-              <img src={m._img} alt={m.title + "picture"} />
+            <div id="movie" data-aos="zoom-in">
+              <div className="picture">
+                <div className="movie-title-block">
+                  <h2>
+                    <a href={"#" + m._id}>Résumé du film: {m.title}</a>
+                  </h2>
+                </div>
+                <img src={m._img} alt={m.title + "picture"} />
+              </div>
+              <div>
+                <h3>{m.title}</h3>
+              </div>
             </div>
-            <h3>{m.title}</h3>
           </li>
         ))}
       </ul>

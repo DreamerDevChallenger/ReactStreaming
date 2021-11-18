@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import Resume from "./pages/Resume";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
@@ -13,6 +14,7 @@ ReactDOM.render(
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/resume" element={<Resume></Resume>}></Route>
         <Route path="/result" element={<SearchPage></SearchPage>}></Route>
       </Routes>
     </Router>

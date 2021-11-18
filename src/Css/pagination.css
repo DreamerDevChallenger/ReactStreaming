@@ -1,1 +1,1 @@
-article ul{display:flex}article ul li{width:auto}
+.block-pagination ul{display:flex;align-items:center;justify-content:center}.block-pagination ul li{width:auto;margin:0em}.block-pagination ul button{background:#3b414b;color:white;box-shadow:0px 0px 3px 0.1px;margin:3px;padding:5px 10px;border-radius:0.2em;cursor:pointer;border:none;transition:200ms}.block-pagination ul button:active{background:#6d778a}
