@@ -13,11 +13,13 @@ function Pagination({ moviesPerPage, totalMovies, paginate }) {
   return (
     <article className="block-pagination">
       <ul>
-        <a href={"#page:" + 1}>
-          <button onClick={() => paginate(1)}>
-            <FontAwesomeIcon icon={faAngleDoubleLeft} />
-          </button>
-        </a>
+        <li>
+          <a href={"#page:" + 1}>
+            <button onClick={() => paginate(1)}>
+              <FontAwesomeIcon icon={faAngleDoubleLeft} />
+            </button>
+          </a>
+        </li>
         {pageNumbers.map((n) => (
           <li key={n}>
             <a onClick={() => paginate(n)} href={"#page:" + n}>
@@ -25,11 +27,15 @@ function Pagination({ moviesPerPage, totalMovies, paginate }) {
             </a>
           </li>
         ))}
-        <a href={"#page:" + pageNumbers[pageNumbers.length - 1]}>
-          <button onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}>
-            <FontAwesomeIcon icon={faAngleDoubleRight} />
-          </button>
-        </a>
+        <li>
+          <a href={"#page:" + pageNumbers[pageNumbers.length - 1]}>
+            <button
+              onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}
+            >
+              <FontAwesomeIcon icon={faAngleDoubleRight} />
+            </button>
+          </a>
+        </li>
       </ul>
     </article>
   );

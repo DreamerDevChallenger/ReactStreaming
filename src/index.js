@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import Resume from "./pages/Resume";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import Home from "./pages/Home";
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route path="/resume" element={<Resume></Resume>}></Route>
         <Route path="/result" element={<SearchPage></SearchPage>}></Route>
       </Routes>
+      <Footer></Footer>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

@@ -26,7 +26,7 @@ function MoviesList() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <section>
-      <ul>
+      <ul className="block-movies">
         {currentMovies.map((m) => (
           <li key={m._id}>
             <div id="movie" data-aos="zoom-in">
@@ -37,9 +37,6 @@ function MoviesList() {
                   </h2>
                 </div>
                 <img src={m._img} alt={m.title + "picture"} />
-              </div>
-              <div>
-                <h3>{m.title}</h3>
               </div>
             </div>
           </li>
