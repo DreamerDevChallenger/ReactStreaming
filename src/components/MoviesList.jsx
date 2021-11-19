@@ -36,7 +36,7 @@ function MoviesList() {
               <div className="picture">
                 <div className="movie-title-block">
                   <h2>
-                    <Link to={"../movies/resume/?id=" + m._id}>
+                    <Link to={"../resume/?id=" + m._id}>
                       Résumé du film: {m.title}
                     </Link>
                   </h2>

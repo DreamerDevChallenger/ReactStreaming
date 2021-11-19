@@ -25,7 +25,7 @@ function Search() {
 
   return (
     <section>
-      <form action="/movies/result/">
+      <form action="/result/">
         <input
           type="text"
           name="search"
@@ -42,7 +42,7 @@ function Search() {
                 <img src={m._img} alt={m.title + "picture"} />
                 <div className="movie-title-block">
                   <h2>
-                    <Link to={"../movies/resume/?id=" + m._id}>
+                    <Link to={"../resume/?id=" + m._id}>
                       Résumé du film: {m.title}
                     </Link>
                   </h2>

@@ -14,12 +14,9 @@ ReactDOM.render(
     <Router basename={process.env.PUBLIC_URL}>
       <Header></Header>
       <Routes>
-        <Route exact path="/movies/" element={<Home></Home>}></Route>
-        <Route path="/movies/resume" element={<Resume></Resume>}></Route>
-        <Route
-          path="/movies/result"
-          element={<SearchPage></SearchPage>}
-        ></Route>
+        <Route exact path="/" element={<Home></Home>}></Route>
+        <Route path="/resume" element={<Resume></Resume>}></Route>
+        <Route path="/result" element={<SearchPage></SearchPage>}></Route>
       </Routes>
       <Footer></Footer>
     </Router>
