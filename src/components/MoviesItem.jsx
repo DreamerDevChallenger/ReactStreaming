@@ -33,14 +33,7 @@ function MoviesItem() {
           <h2>{movie.title}</h2>
           <p>{movie.synopsis}</p>
         </div>
-        <div>
-          <object
-            data="http://www.youtube-nocookie
-            .com/embed/W7qWa52k-nE"
-            width="560"
-            height="315"
-          ></object>
-        </div>
+        <div></div>
       </article>
     </section>
   );

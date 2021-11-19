@@ -14,7 +14,7 @@ ReactDOM.render(
     <Router>
       <Header></Header>
       <Routes>
-        <Route path="/movies/" element={<Home></Home>}></Route>
+        <Route exact path="/movies/" element={<Home></Home>}></Route>
         <Route path="/movies/resume" element={<Resume></Resume>}></Route>
         <Route
           path="/movies/result"
