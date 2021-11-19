@@ -8,6 +8,7 @@ import axios from "axios";
 
 function MoviesList() {
   Aos.init({ duration: 1000 });
+
   const [movies, setMoviesState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage, setMoviesPerPage] = useState(4);

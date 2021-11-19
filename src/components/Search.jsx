@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Aos from "aos";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "aos/dist/aos.css";
 import "../Css/moviesList.css";
 import "../Css/search.css";
@@ -25,14 +27,19 @@ function Search() {
 
   return (
     <section>
-      <form action={process.env.PUBLIC_URL + "/result/"}>
-        <input
-          type="text"
-          name="search"
-          placeholder={getSearch}
-          minLength="2"
-          required
-        />
+      <form action={process.env.PUBLIC_URL} method="get">
+        <div>
+          <input
+            type="search"
+            name="search"
+            placeholder={getSearch}
+            minLength="2"
+            required
+          />
+          <button>
+            <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+          </button>
+        </div>
       </form>
       <ul>
         {search.map((m) => (
