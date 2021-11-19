@@ -11,7 +11,7 @@ import SearchPage from "./pages/SearchPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Header></Header>
       <Routes>
         <Route exact path="/movies/" element={<Home></Home>}></Route>
