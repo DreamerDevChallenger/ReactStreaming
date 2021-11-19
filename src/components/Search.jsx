@@ -36,7 +36,7 @@ function Search() {
             minLength="2"
             required
           />
-          <button>
+          <button type="submit">
             <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
           </button>
         </div>
