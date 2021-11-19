@@ -1,4 +1,6 @@
+import MoviesItem from "../components/MoviesItem";
+
 function Resume() {
-  return <div></div>;
+  return <MoviesItem></MoviesItem>;
 }
 export default Resume;

@@ -3,6 +3,7 @@ import "../Css/moviesList.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function MoviesList() {
@@ -17,7 +18,9 @@ function MoviesList() {
 
   useEffect(() => {
     async function getMovies() {
-      const response = await axios.get(`http://localhost:3003/api/movies/`);
+      const response = await axios.get(
+        `https://backendmovies.herokuapp.com/api/movies/`
+      );
       setMoviesState(response.data);
     }
     getMovies();
@@ -33,7 +36,9 @@ function MoviesList() {
               <div className="picture">
                 <div className="movie-title-block">
                   <h2>
-                    <a href={"#" + m._id}>Résumé du film: {m.title}</a>
+                    <Link to={"resume/?id=" + m._id}>
+                      Résumé du film: {m.title}
+                    </Link>
                   </h2>
                 </div>
                 <img src={m._img} alt={m.title + "picture"} />
