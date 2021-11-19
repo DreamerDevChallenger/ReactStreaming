@@ -25,7 +25,7 @@ function Search() {
 
   return (
     <section>
-      <form action="/result/">
+      <form action={process.env.PUBLIC_URL + "/result/"}>
         <input
           type="text"
           name="search"
