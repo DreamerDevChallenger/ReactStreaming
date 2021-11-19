@@ -7,10 +7,10 @@ function Header() {
         <em>Movies App</em>
       </h1>
       <nav>
-        <Link to="/" className="link" onClick={(e) => {}}>
+        <Link to="/movies/" className="link" onClick={(e) => {}}>
           Home
         </Link>
-        <Link to="/result" className="link">
+        <Link to="/movies/result" className="link">
           Search
         </Link>
       </nav>
