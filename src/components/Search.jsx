@@ -13,20 +13,43 @@ function Search() {
   const [search, setSearch] = useState([]);
   const urlSearch = new URLSearchParams(window.location.search);
   const getSearch = urlSearch.get("search");
-  useEffect(() => {
-    const urlSearch = new URLSearchParams(window.location.search);
-    const getSearch = urlSearch.get("search");
-    axios
-      .get(
-        `https://backendmovies.herokuapp.com/api/movies/result/?search=${getSearch}`
-      )
-      .then((res) => {
-        setSearch(res.data);
-      });
-  }, []);
+  function question() {
+    let question = document.getElementById("question");
+    if (search.length !== 0) {
+      return (question.style.display = "none");
+    }
+  }
+  console.log(search);
+  function resultSearch() {
+    let resultSearch = document.getElementById("result-search");
+    if (search.length !== 0) {
+      return (resultSearch.style.display = "block");
+    }
+  }
+  useEffect(
+    () => {
+      let search = getSearch;
+      axios
+        .get(
+          `https://backendmovies.herokuapp.com/api/movies/result/?search=${search}`
+        )
+        .then((res) => {
+          setSearch(res.data);
+        });
+    },
+    [],
+    question(),
+    resultSearch()
+  );
 
   return (
-    <section>
+    <section id="block-search">
+      <h2 id="question" className="question">
+        Quels films voulez vous consulter ?
+      </h2>
+      <h2 id="result-search" className="result-search">
+        Vous-avez recherchez : "<em>{getSearch}</em>"
+      </h2>
       <form action={process.env.PUBLIC_URL} method="get">
         <div>
           <input

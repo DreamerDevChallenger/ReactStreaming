@@ -16,7 +16,7 @@ function MoviesList() {
   const indexOfLastPage = currentPage * moviesPerPage;
   const indexOfFirstPage = indexOfLastPage - moviesPerPage;
   const currentMovies = movies.slice(indexOfFirstPage, indexOfLastPage);
-
+  console.log(movies);
   useEffect(() => {
     async function getMovies() {
       const response = await axios.get(
@@ -26,7 +26,9 @@ function MoviesList() {
     }
     getMovies();
   }, []);
-
+  if (movies.length === 0) {
+    return <h2>Chargement des films</h2>;
+  }
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <section>

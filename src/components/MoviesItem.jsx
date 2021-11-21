@@ -18,6 +18,7 @@ function MoviesItem() {
   if (movie === null) {
     return <p>Chargement du résumé...</p>;
   }
+  console.log(movie.trailer);
   return (
     <section>
       <article key={movie._id} className="movie-block">
@@ -33,7 +34,16 @@ function MoviesItem() {
           <h2>{movie.title}</h2>
           <p>{movie.synopsis}</p>
         </div>
-        <div></div>
+        <div>
+          <iframe
+            width="560"
+            height="315"
+            src={"https://www.youtube-nocookie.com/embed/" + movie.trailer}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
       </article>
     </section>
   );
