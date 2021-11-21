@@ -50,7 +50,7 @@ function Search() {
       <h2 id="result-search" className="result-search">
         Vous-avez recherchez : "<em>{getSearch}</em>"
       </h2>
-      <form action="result/" method="get">
+      <form action="/result/" method="get">
         <div>
           <input
             type="search"
