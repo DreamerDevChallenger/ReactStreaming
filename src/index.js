@@ -11,7 +11,7 @@ import SearchPage from "./pages/SearchPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename={"/ReactStreaming"}>
+    <Router basename={""}>
       <Header></Header>
       <Routes>
         <Route exact path="/" element={<Home></Home>}></Route>

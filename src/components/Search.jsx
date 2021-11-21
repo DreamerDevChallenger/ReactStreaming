@@ -41,7 +41,10 @@ function Search() {
     question(),
     resultSearch()
   );
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target[0].value);
+  };
   return (
     <section id="block-search">
       <h2 id="question" className="question">
@@ -50,7 +53,7 @@ function Search() {
       <h2 id="result-search" className="result-search">
         Vous-avez recherchez : "<em>{getSearch}</em>"
       </h2>
-      <form action="/result/" method="get">
+      <form onSubmit={process.env.PUBLIC_URL + "/result/"} method="get">
         <div>
           <input
             type="search"
