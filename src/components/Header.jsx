@@ -14,7 +14,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/result" className="link">
+            <Link to="/search" className="link">
               Search
             </Link>
           </li>

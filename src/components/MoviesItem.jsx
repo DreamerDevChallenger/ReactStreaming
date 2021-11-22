@@ -3,12 +3,12 @@ import axios from "axios";
 import "../Css/movieItem.css";
 import { useLocation } from "react-router-dom";
 function MoviesItem() {
-  const [movie, setMoviesState] = useState([]);
+  const [movie, setMoviesState] = useState(null);
   const location = useLocation();
   useEffect(() => {
-    const urlSearch = new URLSearchParams(location.search);
-    const getSearch = urlSearch.get("id");
     async function getMovies() {
+      const urlSearch = new URLSearchParams(location.search);
+      const getSearch = urlSearch.get("id");
       const response = await axios.get(
         `https://backendmovies.herokuapp.com/api/movies/info/${getSearch}`
       );
@@ -19,7 +19,7 @@ function MoviesItem() {
   if (movie === null) {
     return <p>Chargement du résumé...</p>;
   }
-  console.log(movie.trailer);
+
   return (
     <section>
       <article key={movie._id} className="movie-block">

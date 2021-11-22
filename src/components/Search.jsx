@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Aos from "aos";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import {} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "aos/dist/aos.css";
 import "../Css/moviesList.css";
 import "../Css/search.css";
@@ -12,14 +12,21 @@ import "../Css/search.css";
 function Search() {
   Aos.init({ duration: 1000 });
   const [search, setSearch] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const getSearch = searchParams.get("search");
-
+  const url = useLocation();
+  const urlSearch = new URLSearchParams(url.search);
+  const getSearch = urlSearch.get("result");
+  console.log(getSearch);
   function question() {
     let question = document.getElementById("question");
     if (search.length !== 0) {
       return (question.style.display = "none");
     }
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    let getEvent = event.currentTarget.elements.searchInput.value;
+    window.history.pushState({}, "", "#/search?result=" + getEvent);
+    window.location.reload();
   }
 
   function resultSearch() {
@@ -44,10 +51,6 @@ function Search() {
     question(),
     resultSearch()
   );
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(event.currentTarget.elements.searchInput.value);
-  }
 
   return (
     <section id="block-search">
@@ -57,7 +60,7 @@ function Search() {
       <h2 id="result-search" className="result-search">
         Vous-avez recherchez : "<em>{getSearch}</em>"
       </h2>
-      <form role="search">
+      <form role="search" onSubmit={handleSubmit}>
         <div>
           <label></label>
           <input
