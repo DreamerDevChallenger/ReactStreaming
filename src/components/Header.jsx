@@ -7,12 +7,18 @@ function Header() {
         <em>Movies App</em>
       </h1>
       <nav>
-        <Link to="/" className="link" onClick={(e) => {}}>
-          Home
-        </Link>
-        <Link to="/result" className="link">
-          Search
-        </Link>
+        <ul>
+          <li>
+            <Link to="/" className="link" onClick={(e) => {}}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/result" className="link">
+              Search
+            </Link>
+          </li>
+        </ul>
       </nav>
     </header>
   );

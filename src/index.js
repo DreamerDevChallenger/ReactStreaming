@@ -4,23 +4,19 @@ import "./index.css";
 import Resume from "./pages/Resume";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename={""}>
+    <Router>
       <Header></Header>
       <Routes>
         <Route exact path="/" element={<Home></Home>}></Route>
-        <Route path="/resume/" element={<Resume></Resume>}></Route>
-        <Route path="/result/" element={<SearchPage></SearchPage>}></Route>
-        <Route
-          path="/result/?search="
-          element={<SearchPage></SearchPage>}
-        ></Route>
+        <Route exact path="/resume" element={<Resume></Resume>}></Route>
+        <Route exact path="/result" element={<SearchPage></SearchPage>}></Route>
       </Routes>
       <Footer></Footer>
     </Router>

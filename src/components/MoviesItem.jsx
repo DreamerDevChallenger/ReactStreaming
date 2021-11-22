@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Css/movieItem.css";
+import { useLocation } from "react-router-dom";
 function MoviesItem() {
-  const [movie, setMoviesState] = useState(null);
-
+  const [movie, setMoviesState] = useState([]);
+  const location = useLocation();
   useEffect(() => {
+    const urlSearch = new URLSearchParams(location.search);
+    const getSearch = urlSearch.get("id");
     async function getMovies() {
-      const urlSearch = new URLSearchParams(window.location.search);
-      const getSearch = urlSearch.get("id");
       const response = await axios.get(
         `https://backendmovies.herokuapp.com/api/movies/info/${getSearch}`
       );

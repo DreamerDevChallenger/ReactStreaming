@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Aos from "aos";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {} from "react-router-dom";
 import "aos/dist/aos.css";
 import "../Css/moviesList.css";
 import "../Css/search.css";
@@ -11,27 +12,29 @@ import "../Css/search.css";
 function Search() {
   Aos.init({ duration: 1000 });
   const [search, setSearch] = useState([]);
-  const urlSearch = new URLSearchParams(window.location.search);
-  const getSearch = urlSearch.get("search");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const getSearch = searchParams.get("search");
+
   function question() {
     let question = document.getElementById("question");
     if (search.length !== 0) {
       return (question.style.display = "none");
     }
   }
-  console.log(search);
+
   function resultSearch() {
     let resultSearch = document.getElementById("result-search");
     if (search.length !== 0) {
       return (resultSearch.style.display = "block");
     }
   }
+
   useEffect(
     () => {
-      let search = getSearch;
       axios
         .get(
-          `https://backendmovies.herokuapp.com/api/movies/result/?search=${search}`
+          `https://backendmovies.herokuapp.com/api/movies/result/?search=${getSearch}
+          `
         )
         .then((res) => {
           setSearch(res.data);
@@ -41,10 +44,11 @@ function Search() {
     question(),
     resultSearch()
   );
-  const handleSubmit = (event) => {
+  function handleSubmit(event) {
     event.preventDefault();
-    console.log(event.target[0].value);
-  };
+    console.log(event.currentTarget.elements.searchInput.value);
+  }
+
   return (
     <section id="block-search">
       <h2 id="question" className="question">
@@ -53,19 +57,20 @@ function Search() {
       <h2 id="result-search" className="result-search">
         Vous-avez recherchez : "<em>{getSearch}</em>"
       </h2>
-      <form onSubmit={process.env.PUBLIC_URL + "/result/"} method="get">
+      <form role="search">
         <div>
+          <label></label>
           <input
-            type="search"
+            id="searchInput"
+            type="text"
             name="search"
-            placeholder={getSearch}
             minLength="2"
             required
           />
-          <button type="submit">
-            <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
-          </button>
         </div>
+        <button type="submit">
+          <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+        </button>
       </form>
       <ul>
         {search.map((m) => (
