@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Css/movieItem.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 function MoviesItem() {
   const [movie, setMoviesState] = useState(null);
@@ -18,7 +20,12 @@ function MoviesItem() {
     getMovies();
   }, []);
   if (movie === null) {
-    return <p>Chargement du résumé...</p>;
+    return (
+      <div className="loading-spinner-block">
+        <FontAwesomeIcon icon={faSpinner} size="5x" spin></FontAwesomeIcon>
+        <h2>Chargement du film</h2>
+      </div>
+    );
   }
 
   return (

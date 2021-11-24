@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Aos from "aos";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 import "aos/dist/aos.css";
 import "../Css/moviesList.css";

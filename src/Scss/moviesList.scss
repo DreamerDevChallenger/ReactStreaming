@@ -1,7 +1,7 @@
 section {
   margin: auto;
   max-width: 1200px;
-  scroll-behavior: smooth;
+
   ul {
     justify-content: center;
     flex-wrap: wrap;
@@ -56,5 +56,14 @@ section {
         }
       }
     }
+  }
+}
+.loading-spinner-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    margin: 1em;
   }
 }

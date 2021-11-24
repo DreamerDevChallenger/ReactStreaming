@@ -3,6 +3,8 @@ import "../Css/moviesList.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Pagination from "./Pagination";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -27,7 +29,12 @@ function MoviesList() {
     getMovies();
   }, []);
   if (movies.length === 0) {
-    return <h2>Chargement des films</h2>;
+    return (
+      <div className="loading-spinner-block">
+        <FontAwesomeIcon icon={faSpinner} size="5x" spin></FontAwesomeIcon>
+        <h2>Chargements des films</h2>
+      </div>
+    );
   }
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (

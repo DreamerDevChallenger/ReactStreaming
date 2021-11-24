@@ -1,5 +1,6 @@
 import "../Css/pagination.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { HashLink } from "react-router-hash-link";
 import {
   faAngleDoubleRight,
