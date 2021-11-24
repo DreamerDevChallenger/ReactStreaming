@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/ReactStreaming/static/css/main.28b880fe.chunk.css",
-    "main.js": "/ReactStreaming/static/js/main.1aead77d.chunk.js",
-    "main.js.map": "/ReactStreaming/static/js/main.1aead77d.chunk.js.map",
-    "runtime-main.js": "/ReactStreaming/static/js/runtime-main.6c1b4c09.js",
-    "runtime-main.js.map": "/ReactStreaming/static/js/runtime-main.6c1b4c09.js.map",
+    "main.css": "/ReactStreaming/static/css/main.f4623a01.chunk.css",
+    "main.js": "/ReactStreaming/static/js/main.11e7f51d.chunk.js",
+    "main.js.map": "/ReactStreaming/static/js/main.11e7f51d.chunk.js.map",
+    "runtime-main.js": "/ReactStreaming/static/js/runtime-main.56a12259.js",
+    "runtime-main.js.map": "/ReactStreaming/static/js/runtime-main.56a12259.js.map",
     "static/css/2.ec02d681.chunk.css": "/ReactStreaming/static/css/2.ec02d681.chunk.css",
-    "static/js/2.c675b604.chunk.js": "/ReactStreaming/static/js/2.c675b604.chunk.js",
-    "static/js/2.c675b604.chunk.js.map": "/ReactStreaming/static/js/2.c675b604.chunk.js.map",
-    "static/js/3.4f33ee6c.chunk.js": "/ReactStreaming/static/js/3.4f33ee6c.chunk.js",
-    "static/js/3.4f33ee6c.chunk.js.map": "/ReactStreaming/static/js/3.4f33ee6c.chunk.js.map",
+    "static/js/2.60898968.chunk.js": "/ReactStreaming/static/js/2.60898968.chunk.js",
+    "static/js/2.60898968.chunk.js.map": "/ReactStreaming/static/js/2.60898968.chunk.js.map",
+    "static/js/3.95507e44.chunk.js": "/ReactStreaming/static/js/3.95507e44.chunk.js",
+    "static/js/3.95507e44.chunk.js.map": "/ReactStreaming/static/js/3.95507e44.chunk.js.map",
     "index.html": "/ReactStreaming/index.html",
     "static/css/2.ec02d681.chunk.css.map": "/ReactStreaming/static/css/2.ec02d681.chunk.css.map",
-    "static/css/main.28b880fe.chunk.css.map": "/ReactStreaming/static/css/main.28b880fe.chunk.css.map",
-    "static/js/2.c675b604.chunk.js.LICENSE.txt": "/ReactStreaming/static/js/2.c675b604.chunk.js.LICENSE.txt"
+    "static/css/main.f4623a01.chunk.css.map": "/ReactStreaming/static/css/main.f4623a01.chunk.css.map",
+    "static/js/2.60898968.chunk.js.LICENSE.txt": "/ReactStreaming/static/js/2.60898968.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6c1b4c09.js",
+    "static/js/runtime-main.56a12259.js",
     "static/css/2.ec02d681.chunk.css",
-    "static/js/2.c675b604.chunk.js",
-    "static/css/main.28b880fe.chunk.css",
-    "static/js/main.1aead77d.chunk.js"
+    "static/js/2.60898968.chunk.js",
+    "static/css/main.f4623a01.chunk.css",
+    "static/js/main.11e7f51d.chunk.js"
   ]
 }
