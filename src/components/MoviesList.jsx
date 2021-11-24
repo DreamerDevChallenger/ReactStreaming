@@ -31,7 +31,7 @@ function MoviesList() {
   }
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
-    <section>
+    <section id="Home">
       <ul className="block-movies">
         {currentMovies.map((m) => (
           <li key={m._id}>

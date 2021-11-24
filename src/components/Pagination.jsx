@@ -1,5 +1,6 @@
 import "../Css/pagination.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { HashLink } from "react-router-hash-link";
 import {
   faAngleDoubleRight,
   faAngleDoubleLeft,
@@ -16,19 +17,27 @@ function Pagination({ moviesPerPage, totalMovies, paginate }) {
     <article className="block-pagination">
       <ul>
         <li>
-          <button onClick={() => paginate(1)}>
-            <FontAwesomeIcon icon={faAngleDoubleLeft} />
-          </button>
+          <HashLink to="/#">
+            <button onClick={() => paginate(1)}>
+              <FontAwesomeIcon icon={faAngleDoubleLeft} />
+            </button>
+          </HashLink>
         </li>
         {pageNumbers.map((n) => (
           <li key={n}>
-            <button onClick={() => paginate(n)}>{n}</button>
+            <HashLink to="/#">
+              <button onClick={() => paginate(n)}>{n}</button>
+            </HashLink>
           </li>
         ))}
         <li>
-          <button onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}>
-            <FontAwesomeIcon icon={faAngleDoubleRight} />
-          </button>
+          <HashLink to="/#">
+            <button
+              onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}
+            >
+              <FontAwesomeIcon icon={faAngleDoubleRight} />
+            </button>
+          </HashLink>
         </li>
       </ul>
     </article>

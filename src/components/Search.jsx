@@ -14,7 +14,7 @@ function Search() {
   const [search, setSearch] = useState([]);
   const url = useLocation();
   const urlSearch = new URLSearchParams(url.search);
-  const getSearch = urlSearch.get("result");
+  const getSearch = urlSearch.get("result") || undefined;
   console.log(getSearch);
   function question() {
     let question = document.getElementById("question");
@@ -24,7 +24,7 @@ function Search() {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    let getEvent = event.currentTarget.elements.searchInput.value;
+    const getEvent = event.currentTarget.elements.searchInput.value;
     window.history.pushState({}, "", "#/search?result=" + getEvent);
     window.location.reload();
   }

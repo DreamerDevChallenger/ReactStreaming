@@ -5,15 +5,16 @@ import { useLocation } from "react-router-dom";
 function MoviesItem() {
   const [movie, setMoviesState] = useState(null);
   const location = useLocation();
+
+  const urlSearch = new URLSearchParams(location.search);
+  const getSearch = urlSearch.get("id");
+  async function getMovies() {
+    const response = await axios.get(
+      `https://backendmovies.herokuapp.com/api/movies/info/${getSearch}`
+    );
+    setMoviesState(response.data);
+  }
   useEffect(() => {
-    async function getMovies() {
-      const urlSearch = new URLSearchParams(location.search);
-      const getSearch = urlSearch.get("id");
-      const response = await axios.get(
-        `https://backendmovies.herokuapp.com/api/movies/info/${getSearch}`
-      );
-      setMoviesState(response.data);
-    }
     getMovies();
   }, []);
   if (movie === null) {
@@ -37,8 +38,6 @@ function MoviesItem() {
         </div>
         <div>
           <iframe
-            width="560"
-            height="315"
             src={"https://www.youtube-nocookie.com/embed/" + movie.trailer}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
