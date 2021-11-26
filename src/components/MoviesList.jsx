@@ -18,7 +18,7 @@ function MoviesList() {
   const indexOfLastPage = currentPage * moviesPerPage;
   const indexOfFirstPage = indexOfLastPage - moviesPerPage;
   const currentMovies = movies.slice(indexOfFirstPage, indexOfLastPage);
-  console.log(movies);
+
   useEffect(() => {
     async function getMovies() {
       const response = await axios.get(
