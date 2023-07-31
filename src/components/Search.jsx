@@ -28,7 +28,7 @@ function Search() {
   useEffect(() => {
     axios
       .get(
-        `https://backendmovies.herokuapp.com/api/movies/result/?search=${getSearch}
+        `https://backend-react-streaming.vercel.app/api/movies/result/?search=${getSearch}
           `
       )
       .then((res) => {

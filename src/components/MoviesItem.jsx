@@ -10,15 +10,16 @@ function MoviesItem() {
 
   const urlSearch = new URLSearchParams(location.search);
   const getSearch = urlSearch.get("id");
-  async function getMovies() {
-    const response = await axios.get(
-      `https://backendmovies.herokuapp.com/api/movies/info/${getSearch}`
-    );
-    setMoviesState(response.data);
-  }
+
   useEffect(() => {
+    async function getMovies() {
+      const response = await axios.get(
+        `https://backend-react-streaming.vercel.app/api/movies/info/${getSearch}`
+      );
+      setMoviesState(response.data);
+    }
     getMovies();
-  }, []);
+  });
   if (movie === null) {
     return (
       <div className="loading-spinner-block">
