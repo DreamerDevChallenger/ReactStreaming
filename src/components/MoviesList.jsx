@@ -22,7 +22,7 @@ function MoviesList() {
   useEffect(() => {
     async function getMovies() {
       const response = await axios.get(
-        `https://backendmovies.herokuapp.com/api/movies/`
+        `https://backend-react-streaming.vercel.app/api/movies/`
       );
       setMoviesState(response.data);
     }
